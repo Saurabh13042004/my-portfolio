@@ -6,28 +6,28 @@ import { ThemeProvider } from "@/components/theme-provider";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://next-supabase-vote.vercel.app/"),
+	metadataBase: new URL("http://saurabhshukla.tech/"),
 
 	title: {
-		template: "%s | Daily Vote",
-		default: "Daily Vote",
+		template: "%s | Saurabh Shukla",
+		default: "Saurabh Shukla",
 	},
 	authors: {
-		name: "chensokheng",
+		name: "Saurabh Shukla",
 	},
 
 	description:
-		"Cast your vote now and see live updates on the poll results, powered by the real-time capabilities of Supabase database integration in our web app",
+		"I'm a fullstack developer passionate about building a modern web application that users love.",
 	openGraph: {
-		title: "Daily Vote",
+		title: "Saurabh Shukla ",
 		description:
-			"Cast your vote now and see live updates on the poll results, powered by the real-time capabilities of Supabase database integration in our web app.",
-		url: "https://next-supabase-vote.vercel.app/",
-		siteName: "Daily Vote",
-		images: "/og.png",
+    "I'm a fullstack developer passionate about building a modern web application that users love.",
+		url: "http://saurabhshukla.tech/",
+		siteName: "Saurabh Shukla",
+		images: "https://mir-s3-cdn-cf.behance.net/projects/404/6a438557657667.Y3JvcCwxOTcyLDE1NDQsMCw5Mg.png",
 		type: "website",
 	},
-	keywords: ["daily web coding", "chensokheng", "dailywebcoding"],
+	keywords: ["saurabh shukla", "saurabh shukla portfolio", "nextjs portfolio" , "saurabh shukla chitkara university"],
 };
 
 export default function RootLayout({
