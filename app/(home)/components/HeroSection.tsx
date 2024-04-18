@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image";
-import Navbar from "./components/Navbar";
 import Link from "next/link";
 import { MovingBorderBtn } from "./ui/moving-border";
 import Title from "./Title";
@@ -22,7 +21,7 @@ export default function HeroSection() {
         <p className="md:w-96 text-lg text-gray-300">
      
           
-        Based in India, I'm a       <TypeAnimation
+        {"Based in India, I'm a"}       <TypeAnimation
     sequence={[
       // Same substring at the start will only be typed out once, initially
       'Fullstack developer',
