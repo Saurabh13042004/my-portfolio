@@ -1,52 +1,56 @@
-import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { metadata } from './metadata'
+import './globals.css'
+import Script from 'next/script'
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-	metadataBase: new URL("http://saurabhshukla.tech/"),
-
-	title: {
-		template: "%s | Saurabh Shukla",
-		default: "Saurabh Shukla",
-	},
-	authors: {
-		name: "Saurabh Shukla",
-	},
-
-	description:
-		"I'm a fullstack developer passionate about building a modern web application that users love.",
-	openGraph: {
-		title: "Saurabh Shukla ",
-		description:
-    "I'm a fullstack developer passionate about building a modern web application that users love.",
-		url: "http://saurabhshukla.tech/",
-		siteName: "Saurabh Shukla",
-		images: "https://mir-s3-cdn-cf.behance.net/projects/404/6a438557657667.Y3JvcCwxOTcyLDE1NDQsMCw5Mg.png",
-		type: "website",
-	},
-	keywords: ["saurabh shukla", "saurabh shukla portfolio", "nextjs portfolio" , "saurabh shukla chitkara university"],
-};
+export { metadata }
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={spaceGrotesk.className}>
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+    <html lang="en">
+      <body>
+        {children}
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Saurabh Shukla",
+              "url": "https://saurabhshukla.live",
+              "sameAs": [
+                "https://github.com/saurabhshukla-tech",
+                "https://linkedin.com/in/saurabhshukla",
+                "https://twitter.com/saurabh_codes"
+              ],
+              "jobTitle": "Full-Stack Developer & AI Engineer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance / DICE Solutions"
+              },
+              "knowsAbout": [
+                "Full Stack Development",
+                "Artificial Intelligence",
+                "React.js",
+                "Next.js",
+                "Node.js",
+                "OpenAI",
+                "SaaS Platforms",
+                "Tailwind CSS",
+                "Python",
+                "Django",
+                "SQL",
+                "Redis",
+                "API Integration"
+              ]
+            })
+          }}
+        />
       </body>
     </html>
-  );
+  )
 }
