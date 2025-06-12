@@ -19,7 +19,7 @@ export default function Home() {
   }, [copied]);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("hello@saurabhshukla.tech");
+    navigator.clipboard.writeText("sv176734@gmail.com");
     setCopied(true);
   };
 
@@ -52,9 +52,7 @@ export default function Home() {
         {/* Code-style introduction */}
         <ShinyText
           text="const portfolio = await init();"
-          delay={150}
-          animateBy="words"
-          direction="top"
+          speed={3}
           className="text-sm font-mono opacity-60 mb-4"
         />
         

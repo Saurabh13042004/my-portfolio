@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Explore the portfolio of Saurabh Shukla — a full-stack developer building scalable apps and AI-integrated web platforms.",
     images: [{ url: "https://saurabhshukla.live/og-image.jpg" }],
     url: "https://saurabhshukla.live",
+    locale: "en_IN",  // Move locale here where it's valid
   },
   twitter: {
     card: "summary_large_image",
@@ -25,10 +26,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://saurabhshukla.live"),
   alternates: {
     canonical: "/",
+    languages: {
+      'en-IN': '/',  // Add language alternate here if needed
+    },
   },
   viewport: {
     width: "device-width",
     initialScale: 1,
   },
-  locale: "en-IN",
 }
