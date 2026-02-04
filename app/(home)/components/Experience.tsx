@@ -1,55 +1,44 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Title from "./Title";
 
 export default function Experience() {
   const experiences = [
     {
-      company: "Tech Startup",
-      position: "Full Stack Developer",
-      duration: "2023 - Present",
+      company: "Zeotap",
+      position: "Software Engineer Intern",
+      duration: "May 2025 – Present",
       description: [
-        "Developed and maintained web applications using React, Next.js, and Node.js",
-        "Collaborated with cross-functional teams to deliver high-quality software solutions",
-        "Implemented responsive designs and optimized application performance",
-        "Worked with databases including MongoDB and MySQL"
+        "Implemented scalable request–response logging and observability for real-time streaming and batch pipelines, processing high-volume data flows using Pub/Sub and BigQuery to ensure reliability and traceability at scale.",
+        "Delivered 20+ partner integrations (Amazon DSP/AMC, StackAdapt, Zoho, Talon.One, YieldLabs) across Ingress, Egress, and Real-time pipelines, improving partner connectivity and delivery reliability.",
+        "Developed the Policy Lifecycle Engine enabling granular caps, filters, and channel-level delivery governance.",
+        "Built an AI-driven integration agent leveraging semantic search over API documentation, automated schema mapping, and intelligent payload generation to compress integration development cycles from weeks to 10 minutes.",
+        "Created Slack alerting pipelines for ingestion failures, RMQ lag, and metadata issues using Python and SQL."
       ],
-      technologies: ["React", "Next.js", "Node.js", "MongoDB", "TypeScript"]
+      technologies: ["Python", "Pub/Sub", "BigQuery", "LangChain", "RabbitMQ", "SQL"]
     },
     {
-      company: "Freelance Projects",
-      position: "Web Developer",
-      duration: "2022 - 2023",
+      company: "Summit Technology Group India",
+      position: "Software Engineer Intern",
+      duration: "Jun 2024 – May 2025",
       description: [
-        "Built custom websites and web applications for various clients",
-        "Designed and implemented user-friendly interfaces using modern frameworks",
-        "Integrated third-party APIs and payment systems",
-        "Provided ongoing maintenance and support for client projects"
+        "Built core modules for the Loan Servicing System, including bank onboarding/disconnection, recurring billing, and scheduled payment workflows using Stripe APIs, webhooks, and Celery.",
+        "Engineered a high-performance Django CacheOps + Dragon Cache Manager layer, improving public and tenant database throughput by 40%.",
+        "Integrated multiple government APIs and orchestrated asynchronous distributed workflows using Celery task queues and workers.",
+        "Accelerated CI/CD pipelines (GitHub Actions, CircleCI) by reducing log overhead and enabling parallel test execution, cutting runtime by 50–60%."
       ],
-      technologies: ["React", "JavaScript", "CSS", "Firebase", "Tailwind CSS"]
-    },
-    {
-      company: "Personal Projects",
-      position: "Software Developer",
-      duration: "2021 - 2022",
-      description: [
-        "Developed multiple full-stack applications to enhance programming skills",
-        "Learned and implemented various technologies and frameworks",
-        "Created responsive and interactive user interfaces",
-        "Deployed applications using modern hosting platforms"
-      ],
-      technologies: ["HTML", "CSS", "JavaScript", "Python", "Git"]
+      technologies: ["Django", "Celery", "Stripe", "GitHub Actions", "CircleCI", "PostgreSQL"]
     }
   ];
 
   return (
-    <div className="py-10 p-5 sm:p-0">
+    <div className="max-w-4xl mx-auto py-16 px-5 sm:px-0">
       <Title
         text="Experience 💼"
         className="flex flex-col items-center justify-center -rotate-6"
       />
-      <div className="mt-20 space-y-8">
+      <div className="mt-16 space-y-8">
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
@@ -59,35 +48,37 @@ export default function Experience() {
             className="relative"
           >
             {/* Timeline line */}
-            <div className="absolute left-4 top-8 bottom-0 w-0.5 bg-gradient-to-b from-green-500 to-indigo-500"></div>
-            
+            {index < experiences.length - 1 && (
+              <div className="absolute left-4 top-8 bottom-0 w-0.5 bg-gradient-to-b from-green-500 to-indigo-500"></div>
+            )}
+
             {/* Timeline dot */}
-            <div className="absolute left-2 top-6 w-4 h-4 bg-green-500 rounded-full border-4 border-black"></div>
-            
+            <div className="absolute left-2 top-6 w-4 h-4 bg-green-500 rounded-full border-4 border-black shadow-lg shadow-green-500/50"></div>
+
             {/* Content */}
-            <div className="ml-12 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg p-6 hover:border-green-500/50 transition-all duration-300">
+            <div className="ml-12 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-green-500/50 transition-all duration-300">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-bold text-white">{exp.position}</h3>
                   <h4 className="text-lg text-green-400">{exp.company}</h4>
                 </div>
-                <span className="text-sm text-gray-400 mt-2 sm:mt-0">{exp.duration}</span>
+                <span className="text-sm text-gray-400 mt-2 sm:mt-0 bg-gray-800/50 px-3 py-1 rounded-full">{exp.duration}</span>
               </div>
-              
-              <ul className="space-y-2 mb-4">
+
+              <ul className="space-y-3 mb-5">
                 {exp.description.map((item, idx) => (
                   <li key={idx} className="text-gray-300 text-sm flex items-start">
-                    <span className="text-green-500 mr-2 mt-1">•</span>
-                    {item}
+                    <span className="text-green-500 mr-3 mt-1">▹</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              
+
               <div className="flex flex-wrap gap-2">
                 {exp.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-xs border border-indigo-500/30"
+                    className="px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-xs border border-green-500/20"
                   >
                     {tech}
                   </span>
