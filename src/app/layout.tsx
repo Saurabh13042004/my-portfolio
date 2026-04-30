@@ -15,8 +15,17 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Emergent | Fullstack Developer",
-  description: "Portfolio of a fullstack developer building scalable web applications.",
+  title: "Saurabh Shukla | Software Engineer & AI Developer",
+  description: "Software Engineer building scalable systems, data pipelines, and AI tools. Focused on distributed systems, event-driven architectures (Kafka, Pub/Sub), and intelligent AI agents.",
+  keywords: ["Saurabh Shukla", "Software Engineer", "AI Developer", "Distributed Systems", "Data Pipelines", "Zeotap", "Full Stack Developer"],
+  authors: [{ name: "Saurabh Shukla" }],
+  openGraph: {
+    title: "Saurabh Shukla | Software Engineer & AI Developer",
+    description: "Software Engineer building scalable systems, data pipelines, and AI tools.",
+    url: "https://github.com/Saurabh13042004",
+    siteName: "Saurabh Shukla Portfolio",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
