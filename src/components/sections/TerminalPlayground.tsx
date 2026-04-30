@@ -133,7 +133,6 @@ export default function TerminalPlayground() {
                   spellCheck="false"
                   autoComplete="off"
                   placeholder="type a command…"
-                  autoFocus
                 />
                 <span className="cursor-blink text-blue-400 -ml-[calc(100%-1ch)] pointer-events-none">▍</span>
               </div>
