@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-grotesk), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --animate-scroll-left: scroll 30s linear infinite;
+  
+  --color-agy-blue-glow: rgba(0, 102, 255, 0.75);
+  --color-agy-blue-light: rgba(120, 185, 255, 0.75);
+  --color-agy-red: rgb(210, 0, 0);
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes breathe {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+}
+
+body {
+  background-color: theme('colors.neutral.950');
+  color: theme('colors.neutral.100');
+  font-family: theme('fontFamily.sans');
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: theme('fontFamily.display');
+  letter-spacing: -0.025em;
+}
+
+body ::selection {
+  background-color: theme('colors.blue.500 / 30%');
+}
+
+.mono {
+  font-family: theme('fontFamily.mono');
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: theme('colors.neutral.950');
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme('colors.neutral.800');
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.neutral.700');
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-gradient-blue {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500;
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.gradient-line {
+  background: linear-gradient(to right, transparent, theme('colors.blue.500'), transparent);
+}
+
+.marquee {
+  animation: marquee 60s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
