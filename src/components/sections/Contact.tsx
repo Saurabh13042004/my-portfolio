@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import HandwrittenSubtitle from '../ui/HandwrittenSubtitle';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -15,9 +17,15 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-28 px-6 border-t border-neutral-900">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 relative">
           <span className="font-mono text-blue-400 text-sm">06.</span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white tracking-tight">get in touch</h2>
+
+          {/* Handwritten Subtitle */}
+          <div className="absolute -top-12 left-36 sm:left-64 pointer-events-none rotate-[-12deg] z-10">
+            <HandwrittenSubtitle text="say hi!" />
+          </div>
+
           <div className="flex-1 h-px bg-neutral-800"></div>
         </div>
 

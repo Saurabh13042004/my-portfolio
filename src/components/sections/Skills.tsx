@@ -1,6 +1,8 @@
 "use client";
 
 import React from 'react';
+import { motion } from 'framer-motion';
+import HandwrittenSubtitle from '../ui/HandwrittenSubtitle';
 
 const skillCategories = [
   {
@@ -46,9 +48,15 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-28 px-6 border-t border-neutral-900">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 relative">
           <span className="font-mono text-blue-400 text-sm">04.</span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white tracking-tight">toolkit</h2>
+
+          {/* Handwritten Subtitle */}
+          <div className="absolute -top-8 left-24 sm:left-36 pointer-events-none rotate-[-10deg] z-10">
+            <HandwrittenSubtitle text="tools of the trade" />
+          </div>
+
           <div className="flex-1 h-px bg-neutral-800"></div>
         </div>
 

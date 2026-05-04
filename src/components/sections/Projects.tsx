@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import HandwrittenSubtitle from '../ui/HandwrittenSubtitle';
 
 export default function Projects() {
   const [showBadge, setShowBadge] = useState<string | null>(null);
@@ -14,9 +15,15 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-28 px-6 border-t border-neutral-900">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 relative">
           <span className="font-mono text-blue-400 text-sm">03.</span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white tracking-tight">selected projects</h2>
+          
+          {/* Handwritten Subtitle */}
+          <div className="absolute -top-12 left-36 sm:left-72 pointer-events-none rotate-[-8deg] z-10">
+            <HandwrittenSubtitle text="things I built because I couldn't stop thinking about them" />
+          </div>
+
           <div className="flex-1 h-px bg-neutral-800"></div>
         </div>
 

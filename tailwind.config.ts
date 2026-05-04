@@ -16,6 +16,11 @@ export default {
           600: "#f59e0b",
         }
       },
+      fontFamily: {
+        hand: ["var(--font-hand)"],
+        display: ["var(--font-space-grotesk)"],
+        sans: ["var(--font-inter)"],
+      },
       animation: {
         'scroll-left': 'scroll 30s linear infinite',
       },

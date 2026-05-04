@@ -1,12 +1,22 @@
+"use client";
+
 import React from 'react';
+import { motion } from 'framer-motion';
+import HandwrittenSubtitle from '../ui/HandwrittenSubtitle';
 
 export default function About() {
   return (
     <section id="about" className="relative py-28 px-6 border-t border-neutral-900">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 relative">
           <span className="font-mono text-blue-400 text-sm">01.</span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white tracking-tight">about</h2>
+          
+          {/* Handwritten Subtitle */}
+          <div className="absolute -top-10 left-20 sm:left-32 pointer-events-none rotate-[-8deg] z-10">
+            <HandwrittenSubtitle text="its me, person behind the terminal" />
+          </div>
+
           <div className="flex-1 h-px bg-neutral-800"></div>
         </div>
 
